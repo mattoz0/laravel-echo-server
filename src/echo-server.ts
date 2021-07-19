@@ -120,7 +120,7 @@ export class EchoServer {
      * Text shown at startup.
      */
     startup(): void {
-        Log.title(`\nL A R A V E L  E C H O  S E R V E R\n`);
+        Log.title(`\nL A R A V E L  E C H O  S E R V E R (test)\n`);
         Log.info(`version ${packageFile.version}\n`);
 
         if (this.options.devMode) {
