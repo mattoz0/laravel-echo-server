@@ -9,6 +9,7 @@
     "preserveConstEnums": true,
     "removeComments": true,
     "target": "es5",
+    "sourceMap": true,
     "lib": ["es2015", "dom"],
     "types": ["node"]
   },
