@@ -216,6 +216,7 @@ export class EchoServer {
      */
     onSubscribe(socket: any): void {
         socket.on('subscribe', data => {
+            Log.success('test3');
             this.channel.join(socket, data);
         });
     }
@@ -225,6 +226,7 @@ export class EchoServer {
      */
     onUnsubscribe(socket: any): void {
         socket.on('unsubscribe', data => {
+            Log.success('test2');
             this.channel.leave(socket, data.channel, 'unsubscribed');
         });
     }
@@ -234,6 +236,7 @@ export class EchoServer {
      */
     onDisconnecting(socket: any): void {
         socket.on('disconnecting', (reason) => {
+            Log.success('test4');
             Object.keys(socket.rooms).forEach(room => {
                 if (room !== socket.id) {
                     this.channel.leave(socket, room, reason);
@@ -247,6 +250,7 @@ export class EchoServer {
      */
     onClientEvent(socket: any): void {
         socket.on('client event', data => {
+            Log.success('test1');
             this.channel.clientEvent(socket, data);
         });
     }
